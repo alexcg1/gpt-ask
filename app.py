@@ -18,8 +18,8 @@ def get_response(query):
 
 
 @click.command()
-# @click.option('--model', default='text-davinci-003')
-# @click.option('--temperature', default=0.9)
+@click.option('--model', default='text-davinci-003')
+@click.option('--temperature', default=0.9)
 @click.argument('query', nargs=-1)
 def main(query: str, model: str, temperature: float):
     if len(query) == 0:
