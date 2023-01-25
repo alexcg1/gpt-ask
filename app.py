@@ -12,7 +12,7 @@ def get_response(query):
         stdout=subprocess.PIPE,
         universal_newlines=True,
     ).stdout.strip()
-    output = f'[bold red]gpt3[/bold red]: {str(response)}'
+    output = f'[bold red]GPT3[/bold red]: {str(response)}'
 
     return output
 
