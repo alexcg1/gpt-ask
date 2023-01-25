@@ -1,5 +1,6 @@
 import readline
 import subprocess
+import sys
 
 import click
 from rich import print
@@ -25,7 +26,10 @@ def main(query: str, model: str, temperature: float):
     if len(query) == 0:
         while True:
             query = Prompt.ask('[bold green]User[/bold green]')
-            print(get_response(query))
+            if query.lower() == '/quit':
+                sys.exit()
+            else:
+                print(get_response(query))
 
     else:
         query = ' '.join(query)
